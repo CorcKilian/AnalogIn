@@ -15,7 +15,7 @@ int main()
     setup();
     while(1)
     {        
-        vin = readADC(5);  
+        vin = readADC(6);  
         if (vin > 2047)
         {
             GPIOB->ODR |= (1 << 3);
@@ -33,7 +33,8 @@ void setup(void)
     pinMode(GPIOB,3,1); // digital output
     pinMode(GPIOB,4,0); // digital input
     enablePullUp(GPIOB,4); // pull-up for button
-    pinMode(GPIOA,0,3);  // analog input
+    //pinMode(GPIOA,0,3);  // analog input
+    pinMode(GPIOA,1,3);  // analog input
     initADC();
 }
 void initADC()
